@@ -14,28 +14,23 @@ Net::Pavatar - Pavatar client
 
 =head1 VERSION
 
-Version 0.68
+Version 0.69
 
 =cut
 
-our $VERSION = '0.68';
+our $VERSION = '0.69';
 
 =head1 SYNOPSIS
 
     use Net::Pavatar;
 
+    my ($hash, $file_type) = Net::Pavatar->fetch( 'http://someblog.com/', { size => [32, 48] } );
 
-
-    my ($hash, $file_type) = Net::Pavatar->fetch('http://someblog.com/', { size => [32, 48] });
     if ($file_type) {
         open FILE, ">avatar.$file_type";
         print FILE $hash->{'48'};
         close FILE;
     }
-
-    ...or...
-
-    my $url = Net::Pavatar->discover('http://someblog.com/');
 
 =cut
 
@@ -115,7 +110,7 @@ sub _discover {
 
 
 
-=head2 my ($hashref, $type) = Net::Pavatar->fetch($url, \%opts)
+=head2 my ($hashref, $type) = Net::Pavatar->fetch( $url, \%opts )
 
 Returns a hashref and a string, as a 2-list. The hash contains the image sizes as keys, and the image data for each size as values. The string contains the image type and can either be 'jpeg', 'png' or 'gif'. If a pavatar does not exist, or is not valid for any reason, returns null.
 
@@ -125,7 +120,7 @@ C<size> : the sizes that you want the pavatar image returned in - defaults to 80
 
 C<timeout> : the total time that UserAgent is allowed to retrieve each page or image - defaults to 15
 
-e.g. C<< Net::Pavatar->fetch($url, { size => [32,48], timeout => 25 }) >>
+e.g. C<< Net::Pavatar->fetch( $url, { size => [32, 48], timeout => 25 } ) >>
 
 =cut
 
