@@ -14,11 +14,11 @@ Net::Pavatar - Pavatar client
 
 =head1 VERSION
 
-Version 0.69
+Version 0.691
 
 =cut
 
-our $VERSION = '0.69';
+our $VERSION = '0.691';
 
 =head1 SYNOPSIS
 
