@@ -1,5 +1,8 @@
 Revision history for Net-Pavatar
 
+0.692   Apr 13th, 2007
+        Fixed dependencies so tests don't fail
+
 0.691   Apr 13th, 2007
         Minor changes in documentation
         Fixed tests
