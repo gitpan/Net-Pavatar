@@ -10,9 +10,9 @@ WriteMakefile(
     PL_FILES            => {},
     PREREQ_PM => {
         'Test::More' => 0,
-		'LWPx::ParanoidAgent' => 0,
-		'GD' => 0,
-		'Regexp::Common' => 0,
+		'LWPx::ParanoidAgent' => '1.03',
+		'GD' => '1.48',
+		'Regexp::Common' => '2.120',
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'Net-Pavatar-*' },

@@ -1,13 +1,13 @@
 # http://module-build.sourceforge.net/META-spec.html
 #XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
 name:         Net-Pavatar
-version:      0.692
+version:      0.693
 version_from: lib/Net/Pavatar.pm
 installdirs:  site
 requires:
-    GD:                            0
-    LWPx::ParanoidAgent:           0
-    Regexp::Common:                0
+    GD:                            1.48
+    LWPx::ParanoidAgent:           1.03
+    Regexp::Common:                2.120
     Test::More:                    0
 
 distribution_type: module

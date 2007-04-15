@@ -14,11 +14,11 @@ Net::Pavatar - Pavatar client
 
 =head1 VERSION
 
-Version 0.692
+Version 0.693
 
 =cut
 
-our $VERSION = '0.692';
+our $VERSION = '0.693';
 
 =head1 SYNOPSIS
 
@@ -87,7 +87,7 @@ sub _discover {
 	}
 
 	# STEP 3.c of spec
-	my $uri = URI->new($url);
+	my $uri = $resp->request->uri;
 	if ($uri->scheme ne 'http') { return; }
 	$uri = 'http://'.$uri->host_port.($uri->path || '/');
 	my $pavuri = URI->new_abs('pavatar.png', $uri);
@@ -98,10 +98,13 @@ sub _discover {
 	($resp, $ok) = &_browser_get( $pavuri->as_string, $ua );
 	if ($ok) { $ua->max_size($max_size); return wantarray ? ($pavuri, $resp) : $pavuri; }
 
+	my $did_pavuri = $pavuri->as_string;
 	$pavuri->path('/pavatar.png');
 
-	($resp, $ok) = &_browser_get( $pavuri, $ua );
-	if ($ok) { $ua->max_size($max_size); return wantarray ? ($pavuri, $resp) : $pavuri; }
+	if ($pavuri->as_string ne $did_pavuri->as_string) {
+		($resp, $ok) = &_browser_get( $pavuri, $ua );
+		if ($ok) { $ua->max_size($max_size); return wantarray ? ($pavuri, $resp) : $pavuri; }
+	}
 
 	$ua->max_size($max_size);
 
