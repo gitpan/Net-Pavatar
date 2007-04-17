@@ -1,5 +1,8 @@
 Revision history for Net-Pavatar
 
+0.964   Apr 17th, 2007
+        Fixed a typo that would cause a fatal error in step 3.c ii
+
 0.963   Apr 15th, 2007
         Improved discovery
 

@@ -14,11 +14,11 @@ Net::Pavatar - Pavatar client
 
 =head1 VERSION
 
-Version 0.693
+Version 0.694
 
 =cut
 
-our $VERSION = '0.693';
+our $VERSION = '0.694';
 
 =head1 SYNOPSIS
 
@@ -101,7 +101,7 @@ sub _discover {
 	my $did_pavuri = $pavuri->as_string;
 	$pavuri->path('/pavatar.png');
 
-	if ($pavuri->as_string ne $did_pavuri->as_string) {
+	if ($pavuri->as_string ne $did_pavuri) {
 		($resp, $ok) = &_browser_get( $pavuri, $ua );
 		if ($ok) { $ua->max_size($max_size); return wantarray ? ($pavuri, $resp) : $pavuri; }
 	}
