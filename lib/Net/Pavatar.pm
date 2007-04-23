@@ -14,11 +14,11 @@ Net::Pavatar - Pavatar client
 
 =head1 VERSION
 
-Version 0.694
+Version 0.90
 
 =cut
 
-our $VERSION = '0.694';
+our $VERSION = '0.90';
 
 =head1 SYNOPSIS
 
@@ -87,7 +87,8 @@ sub _discover {
 	}
 
 	# STEP 3.c of spec
-	my $uri = $resp->request->uri;
+	my $uri = URI->new($url);
+	#my $uri = $resp->request->uri;
 	if ($uri->scheme ne 'http') { return; }
 	$uri = 'http://'.$uri->host_port.($uri->path || '/');
 	my $pavuri = URI->new_abs('pavatar.png', $uri);
@@ -186,7 +187,7 @@ sub fetch {
 			my $data = $newimage->$type();
 			$return->{$size} = $data;
 		} else {
-			confess "Error: problem with size = '$size'";
+			confess "Error: problem with size = '$size' (needs to be an integer between 1 and 80 inclusive)";
 		}
 	}
 	if (! keys %$return) { return; }
