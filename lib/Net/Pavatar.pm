@@ -14,11 +14,11 @@ Net::Pavatar - Pavatar client
 
 =head1 VERSION
 
-Version 0.90
+Version 1.00
 
 =cut
 
-our $VERSION = '0.90';
+our $VERSION = '1.00';
 
 =head1 SYNOPSIS
 
@@ -47,13 +47,11 @@ sub _browser_get {
 }
 
 
-#=head2 Net::Pavatar->discover( $url, (\%options) )
-#
-#Returns the URL of the avatar image of the owner of $url, if exists (returns null otherwise).
-
 =head1 DESCRIPTION
 
 Fetches a pavatar image from a given URL and gives it to you in the sizes you specify. Uses LWPx::ParanoidAgent to protect your servers from attacks.
+
+This module fully conforms to Pavatar spec 0.3.0 (L<http://www.pavatar.com/spec/>), which is the latest one on Apr 25th, 2007.
 
 =head1 METHODS
 
