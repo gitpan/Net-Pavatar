@@ -14,11 +14,11 @@ Net::Pavatar - Pavatar client
 
 =head1 VERSION
 
-Version 1.00
+Version 1.01
 
 =cut
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 =head1 SYNOPSIS
 
@@ -51,7 +51,7 @@ sub _browser_get {
 
 Fetches a pavatar image from a given URL and gives it to you in the sizes you specify. Uses LWPx::ParanoidAgent to protect your servers from attacks.
 
-This module fully conforms to Pavatar spec 0.3.0 (L<http://www.pavatar.com/spec/>), which is the latest one on Apr 25th, 2007.
+This module fully conforms to Pavatar spec 0.3.0 (L<http://pavatar.com/spec/pavatar-0.3.0>), which is the latest one on Apr 25th, 2007.
 
 =head1 METHODS
 
@@ -200,7 +200,7 @@ Alexander Karelas, C<< <karjala at karjala.org> >>
 =head1 BUGS
 
 Please report any bugs or feature requests to
-C<bug-net-avatar-pavatar at rt.cpan.org>, or through the web interface at
+C<bug-net-pavatar at rt.cpan.org>, or through the web interface at
 L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Net-Pavatar>.
 I will be notified, and then you'll automatically be notified of progress on
 your bug as I make changes.
